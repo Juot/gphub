@@ -14,7 +14,8 @@ while len(links) > 0:
     print(len(links),end = "  ")
     ran = random.randint(0,len(links)-1)
     print(ran)
+    print(datetime.datetime.now())
     print("*********",random.randint(0,len(links)-1),"***********")
-    newArticle = links[1].attrs["href"]
+    newArticle = links[ran].attrs["href"]
     print(newArticle)
     links = getLinks(newArticle)
