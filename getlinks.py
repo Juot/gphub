@@ -11,6 +11,7 @@ def getLinks(articleUrl):
     return bs0bj.find("div",{"id":"bodyContent"}).findAll("a",href=re.compile("^(/wiki/)((?!:).)*$"))
 links = getLinks("/wiki/Kevin_Bacon")
 while len(links) > 0:
+    print(datetime.timedelta(days=1))
     print(len(links),end = "  ")
     ran = random.randint(0,len(links)-1)
     print(ran)
