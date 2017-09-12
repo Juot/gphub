@@ -32,7 +32,7 @@ def splitAddress(address):
     return addressParts
 def getRandomExternalLink(startingPage):
     html = urlopen(startingPage)
-    bsObj = BeautifulSoup(html)
+    bsObj = BeautifulSoup(html.read(),'lxml')
     externalLinks = getExternalLinks(bsObj, splitAddress(startingPage)[0])
     if len(externalLinks) == 0:
         internalLinks = getInternalLinks(startingPage)
